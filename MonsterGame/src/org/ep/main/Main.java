@@ -24,7 +24,7 @@ public class Main {
 		Player player = playerUI.createPlayer();
 		MonsterGameUI monsterGameUI = new MonsterGameUI(monsterField, player, sc);
 		
-		BattleService battleService = new BattleService();
+		BattleService battleService = new BattleService(sc);
 
 		MainUI ui = new MainUI(monsterField, player, monsterGameUI, playerUI, sc, battleService);
 		

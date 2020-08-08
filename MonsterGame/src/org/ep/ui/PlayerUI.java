@@ -27,6 +27,7 @@ public class PlayerUI {
 		System.out.println("이름 :"+player.getName());
 		System.out.println("공격력 :"+player.getAttackPoint());
 		System.out.println("체력 :"+player.getHP());
+		System.out.println();
 		return this.player;
 	}
 	
