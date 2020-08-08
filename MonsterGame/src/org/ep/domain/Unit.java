@@ -1,4 +1,4 @@
-package org.ep.VO;
+package org.ep.domain;
 
 import lombok.Getter;
 import lombok.Setter;

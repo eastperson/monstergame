@@ -1,6 +1,6 @@
-package org.ep.VO;
+package org.ep.domain;
 
-import org.ep.service.Attackable;
+import org.ep.service.Fightable;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString
 
-public class Monster extends Unit implements Attackable {
+public class Monster extends Unit implements Fightable {
 	
 	private int level;
 	protected int HP;
@@ -24,7 +24,7 @@ public class Monster extends Unit implements Attackable {
 	}
 
 
-	public void attack(Unit player) {
-		player.setHP(player.getHP() - this.attackPoint);
+	public void attack(Fightable fightable) {
+		fightable.setHP(fightable.getHP() - this.attackPoint);
 	}
 }

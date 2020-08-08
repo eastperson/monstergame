@@ -1,8 +1,10 @@
 package org.ep.service;
 
-import org.ep.VO.Unit;
-
+// 스킬 구현이 가능한 유닛(Player ...)
 public interface Skillable {
 	
-	public void skill(Unit unit);
+	public void skill(Fightable fightable);
+	public int getAP();
+	public int getMP();
+	public int getMPAmount();
 }

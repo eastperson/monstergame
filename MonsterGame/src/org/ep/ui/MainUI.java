@@ -1,40 +1,40 @@
 package org.ep.ui;
 
 import java.util.Scanner;
-
-import org.ep.VO.Player;
-import org.ep.service.BattleService;
 import org.ep.service.MonsterField;
 
 public class MainUI {
 	
 	private MonsterField monsterField;
-	private Player player;
 	private MonsterGameUI monsterGameUI;
-	private PlayerUI playerUI;
 	private Scanner sc;
-	private BattleService battleService;
+	private BattleUI battleUI;
 	
-	
-	
-	public MainUI(MonsterField monsterField, Player player, MonsterGameUI monsterGameUI,
-			PlayerUI playerUI, Scanner sc, BattleService battleService) {
+	public MainUI(MonsterField monsterField, MonsterGameUI monsterGameUI,
+					Scanner sc, BattleUI battleUI) {
 		super();
 		this.monsterField = monsterField;
-		this.player = player;
 		this.monsterGameUI = monsterGameUI;
-		this.playerUI = playerUI;
 		this.sc = sc;
-		this.battleService = battleService;
+		this.battleUI = battleUI;
 	}
-
-
-
+	
+	public boolean restart() {
+		System.out.println("다시 시작하시겠습니까? (Y/N)");
+		String answer = sc.nextLine();
+		return answer.equalsIgnoreCase("Y");
+	}
 
 	public void gameStart() {
 		System.out.println("계속 진행하실거면 Enter!");
 		sc.nextLine();
-		monsterGameUI.fieldEnter(monsterField, battleService);
+		monsterGameUI.fieldEnter(monsterField, battleUI);
+		if(restart()) {
+			gameStart();
+		} else {
+			System.out.println("게임이 종료되었습니다.");
+			return;
+		}
 	}
 
 }
