@@ -18,7 +18,7 @@ public class MonsterCave implements MonsterField {
 		return this.name;
 	}
 	
-	// MonsterCave 객체 생성시 몬스터 자동 생성
+	// MonsterCave 객체 생성시 몬스터 자동 생성.
 	public MonsterCave(List<Monster> list) {
 		super();
 		this.list = list;
